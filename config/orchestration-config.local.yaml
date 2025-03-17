@@ -1,0 +1,18 @@
+supervisor:
+  llmProvider: OPENAI
+  model: gpt-4o-mini
+  temperature: 0
+
+workers:
+  - name: chatAgent
+    llmProvider: OPENAI
+    model: gpt-4o
+    temperature: 0.5
+    systemMessage: You are a kind chat assistant with access to tavily for web search
+    tools: [tavily]
+  - name: mathAgent
+    llmProvider: OPENAI
+    model: gpt-4o
+    temperature: 0
+    systemMessage: You are an math expert with access to a calculator tool
+    tools: [calculator]
