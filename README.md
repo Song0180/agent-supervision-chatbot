@@ -20,3 +20,5 @@ pnpm install
 ```bash
 pnpm dev
 ```
+
+Then, access <http://localhost:3000/>
