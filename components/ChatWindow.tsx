@@ -186,14 +186,14 @@ export function ChatWindow(props: {
           {titleText && <h2 className='text-2xl font-bold'>{titleText}</h2>}
         </div>
         <div className='flex flex-col-reverse p-8 md:px-0 md:w-[768px] w-full flex-1'>
-          {status === 'streaming' && showSkeleton && (
+          {status === 'submitted' && showSkeleton && (
             <ChatMessageBubble
               message={{ id: 'loading', content: '', role: 'assistant' }}
               skeleton={
                 <div className='flex flex-col gap-2'>
-                  <div className='bg-gradient-to-r from-purple-200 to-blue-200 animate-pulse rounded-full h-4 w-full' />
-                  <div className='bg-gradient-to-r from-purple-200 to-blue-200 animate-pulse rounded-full h-4 w-full' />
-                  <div className='bg-gradient-to-r from-purple-200 to-blue-200 animate-pulse rounded-full h-4 w-[30%]' />
+                  <div className='bg-linear-to-r/shorter from-indigo-500 to-teal-400 animate-pulse rounded-full h-4 w-full' />
+                  <div className='bg-linear-to-r/shorter from-indigo-500 to-teal-400 animate-pulse rounded-full h-4 w-full' />
+                  <div className='bg-linear-to-r/shorter from-indigo-500 to-teal-400 animate-pulse rounded-full h-4 w-[30%]' />
                 </div>
               }
             />

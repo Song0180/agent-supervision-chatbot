@@ -4,7 +4,7 @@ supervisor:
   temperature: 0
 
 workers:
-  - name: chatAgent
+  - name: webSearchAgent
     llmProvider: OPENAI
     model: gpt-4o
     temperature: 0.5
@@ -16,3 +16,15 @@ workers:
     temperature: 0
     systemMessage: You are an math expert with access to a calculator tool
     tools: [calculator]
+  - name: wikiAgent
+    llmProvider: OPENAI
+    model: gpt-4o
+    temperature: 0
+    systemMessage: You are a kind chat assistant with access to wikipedia search
+    tools: [wikipedia]
+  - name: codeAgent
+    llmProvider: OPENAI
+    model: gpt-4o
+    temperature: 0
+    systemMessage: You are a kind code expert to answer any coding related questions
+    tools: []

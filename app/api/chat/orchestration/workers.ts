@@ -20,6 +20,7 @@ import { TavilySearchResults } from '@langchain/community/tools/tavily_search';
 import { WorkerConfig } from '@/types/agentConfig.type';
 import ConfigLoader from '@/utils/agentConfigLoader';
 import { Calculator } from '@langchain/community/tools/calculator';
+import { WikipediaQueryRun } from '@langchain/community/tools/wikipedia_query_run';
 
 // This defines the object that is passed between each node
 // in the graph. We will create different nodes for each agent and tool
@@ -63,6 +64,13 @@ const getToolsFromConfig = (toolsConfig: string[]) => {
       tools.push(new TavilySearchResults({ maxResults: 1 }));
     } else if (tool.includes('calculator')) {
       tools.push(new Calculator());
+    } else if (tool.includes('wikipedia')) {
+      tools.push(
+        new WikipediaQueryRun({
+          topKResults: 3,
+          maxDocContentLength: 4000,
+        })
+      );
     }
   });
 
